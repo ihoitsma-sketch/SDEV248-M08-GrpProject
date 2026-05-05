@@ -261,10 +261,10 @@ tracks/2/path = NodePath("Skeleton2D/hip/torso:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.25023794, 0.5, 0.7517352),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-10, -48.152733), Vector2(-10, -46)]
+"values": [Vector2(-10, -48.152733), Vector2(-10, -47.151917), Vector2(-10, -46.153), Vector2(-10, -47.159805)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -369,10 +369,10 @@ tracks/11/path = NodePath("Skeleton2D/hip/torso:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-2.4958208]
+"values": [-2.4958208, -2.4958208]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -597,7 +597,6 @@ rest = Transform2D(0.99975604, 0.022088265, -0.022088265, 0.99975604, -6, 6)
 [node name="calf_right" type="Bone2D" parent="Skeleton2D/hip/leg_right" unique_id=1844620791]
 position = Vector2(-11, 36)
 rotation = -3.0057888
-scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(-0.79867655, 0.60176057, -0.60176057, -0.79867655, -11, 36)
 
 [node name="foot_right" type="Bone2D" parent="Skeleton2D/hip/leg_right/calf_right" unique_id=906484539]
@@ -617,7 +616,7 @@ rest = Transform2D(0.9992373, -0.03904855, 0.03904855, 0.9992373, -5, 36)
 [node name="foot_left" type="Bone2D" parent="Skeleton2D/hip/leg_left/calf_left" unique_id=1110444856]
 position = Vector2(12, 44)
 rotation = -2.5950987
-scale = Vector2(0.9999983, 0.9999983)
+scale = Vector2(0.99999976, 0.99999976)
 rest = Transform2D(-0.99846846, 0.05532141, -0.05532141, -0.99846846, 12, 44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135716193]
