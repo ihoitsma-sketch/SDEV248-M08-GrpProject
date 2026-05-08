@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dw5dakgiteso8"]
+
+[ext_resource type="Texture2D" uid="uid://c0q8qkabj824u" path="res://stairs.png" id="1_l5oqe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi41t"]
+size = Vector2(57, 66.5)
+
+[node name="stairs" type="Area2D" unique_id=190330224]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1333882154]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_l5oqe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2130744258]
+position = Vector2(-0.5, 5.25)
+shape = SubResource("RectangleShape2D_yi41t")
