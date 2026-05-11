@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://bmirc1e6mkf1u"]
+
+[ext_resource type="Texture2D" uid="uid://cdctm1thlh6ke" path="res://tilemaps.png" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c055utdqsowxd" path="res://ghost.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bk7meqo2m1o2n" path="res://player.tscn" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://byal2a7kr6q10" path="res://ghost.gd" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://6rns1sbbv2fj" path="res://mutant.tscn" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://q6eigtx02o6k" path="res://mutant.gd" id="6_272bh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
+texture = ExtResource("1_1bvp3")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7mycd"]
+tile_size = Vector2i(100, 100)
+sources/1 = SubResource("TileSetAtlasSource_lquwl")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(2, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(899, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+size = Vector2(3, 398)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(901, 6)
+
+[node name="Main" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_7mycd")
+format = 2
+layer_0/tile_data = PackedInt32Array(65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, -65534, 1, 0, -65535, 1, 0, -65536, 1, 0, -1, 1, 0, -2, 1, 0, -3, 1, 0, -4, 1, 0, 65532, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 3, 1, 0, -65533, 1, 0, -131069, 1, 0, -131070, 1, 0, -131071, 1, 0, -131072, 1, 0, -65537, 1, 0, -65538, 1, 0, -65539, 1, 0, -65540, 1, 0, -5, 1, 0, 65531, 1, 0, 131067, 1, 0, -65541, 1, 0)
+
+[node name="ghost" parent="." instance=ExtResource("1_h2yge")]
+position = Vector2(245, 29)
+script = ExtResource("3_7mycd")
+
+[node name="Player" parent="." instance=ExtResource("2_1bvp3")]
+position = Vector2(-303, -92)
+
+[node name="mutant" parent="." instance=ExtResource("3_lquwl")]
+position = Vector2(-8, 6)
+script = ExtResource("6_272bh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="LeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-498, 0)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="TopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-49.5, -202)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="RightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(399.5, -4)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="BottomWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-49.5, 199)
+shape = SubResource("RectangleShape2D_kek77")

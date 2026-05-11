@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://6rns1sbbv2fj"]
+
+[ext_resource type="Texture2D" uid="uid://b8fkenxvf20xf" path="res://mutant.png" id="1_cyrcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5eww"]
+size = Vector2(152.592, 85)
+
+[node name="mutant" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cyrcq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+scale = Vector2(1.07476, 0.905376)
+shape = SubResource("RectangleShape2D_c5eww")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "crawl"

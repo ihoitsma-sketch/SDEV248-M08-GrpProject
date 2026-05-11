@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c055utdqsowxd"]
+
+[ext_resource type="Texture2D" uid="uid://cot44bpx1hyg2" path="res://ghost.png" id="1_v5pp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6attn"]
+size = Vector2(83, 194)
+
+[node name="ghost" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+texture = ExtResource("1_v5pp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -18)
+shape = SubResource("RectangleShape2D_6attn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "float"
